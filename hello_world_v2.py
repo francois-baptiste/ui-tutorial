@@ -10,10 +10,11 @@ def change_label(label):
         label.text = "Hello"
 
 
-view = ui.load_view("hello_world_v2")
-my_label = view["label1"]
-view.present("fullscreen")
+if __name__ == '__main__':
+    view = ui.load_view("hello_world_v2")
+    my_label = view["label1"]
+    view.present("fullscreen")
 
-while True:
-    time.sleep(1)
-    change_label(my_label)
+    while True:
+        time.sleep(1)
+        change_label(my_label)

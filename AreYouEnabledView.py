@@ -78,4 +78,5 @@ class AreYouEnabledView(ui.View):
 
 
 # in the .pyui file, the "Custom View Class" must be set to AreYouEnabledView
-view = ui.load_view()
+if __name__ == '__main__':
+    view = ui.load_view()
