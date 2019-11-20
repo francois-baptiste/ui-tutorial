@@ -41,7 +41,7 @@ class MyView(ui.View):
             fill="red",
         )
         img = Img2ui(img).draw(0, 0, self.width, self.height)
-        print(f"[draw] counter = {self.draw_count}")
+        print("[draw] counter = {}".format(self.draw_count))
 
     def layout(self):
         orientation = None
@@ -52,7 +52,7 @@ class MyView(ui.View):
             orientation = "portrait"
         self.layout_count += 1
         print(
-            f"[layout] counter = {self.layout_count}, mode = {style}, orientation = {orientation}"
+            "[layout] counter = {self.layout_count}, mode = {}, orientation = {}".format(style, orientation)
         )
         # In fullscreen mode orientation (portrait/landscape) is tracked
 
