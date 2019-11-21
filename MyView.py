@@ -1,5 +1,8 @@
-import ui, Image, ImageDraw, ImageFont, io
-from PIL import Image as ImageP
+import Image
+import ImageDraw
+import ImageFont
+import io
+import ui
 
 # style = 'sheet'
 style = "fullscreen"

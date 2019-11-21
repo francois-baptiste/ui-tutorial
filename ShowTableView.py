@@ -1,6 +1,8 @@
 # coding: utf-8
 
-import console, os, ui
+import console
+import os
+import ui
 
 
 class ShowTableView(object):

@@ -1,6 +1,9 @@
 # coding: utf-8
-import ui, os, datetime
 from operator import itemgetter
+
+import datetime
+import os
+import ui
 
 
 class MyTableViewDataSource(object):
@@ -79,10 +82,10 @@ class MyTableView(ui.View):
         names = [self.btn_name.name, self.btn_size.name, self.btn_date.name]
         sender_index = names.index(sender.name)
         if sender.background_color == (
-            1.0,
-            1.0,
-            1.0,
-            1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
         ):  # thrid click on the same column doesn't work if it's no hardcoded color
             if sender.background_color == self.unselect_color:
                 sender.background_color = self.select_color
@@ -103,7 +106,7 @@ class MyTableView(ui.View):
             if sender.name == self.btn_size.name:
                 self.btn_size.background_color = self.select_color
                 self.all_items = sorted([elem for elem in self.all_items if not isinstance(elem[sender_index], str)],
-                       key=itemgetter(sender_index)) + sorted(
+                                        key=itemgetter(sender_index)) + sorted(
                     [elem for elem in self.all_items if isinstance(elem[sender_index], str)],
                     key=itemgetter(sender_index))
             else:

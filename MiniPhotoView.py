@@ -1,6 +1,8 @@
 # coding: utf-8
 
-import ui, photos, console
+import console
+import photos
+import ui
 
 
 class MyPictureView(ui.View):

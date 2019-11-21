@@ -1,6 +1,7 @@
 # coding: utf-8
 
-import ui, time
+import time
+import ui
 
 
 def change_label(label):

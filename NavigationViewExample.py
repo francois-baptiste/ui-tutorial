@@ -32,5 +32,6 @@ class NavView(ui.View):
     def bt_action(self, sender):
         print("action from " + sender.name)
 
+
 if __name__ == '__main__':
     NavView()

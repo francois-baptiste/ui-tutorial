@@ -1,6 +1,7 @@
 # coding: utf-8
 from __future__ import print_function
-import ui, time
+
+import ui
 
 back = ui.ButtonItem()
 back.image = ui.Image.named("ionicons-arrow-left-b-32")

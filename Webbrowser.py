@@ -77,11 +77,11 @@ class Webbrowser(ui.View):
     def webview_did_fail_load(self, webview, error_code, error_msg):
         if error_code < -999:
             error_html = (
-                "<HTML><HEAD></HEAD><BODY><span style='color:#FF0000'><H1><P>error_code: "
-                + str(error_code)
-                + ", "
-                + error_msg
-                + " <br></P></H1></BODY></HTML>"
+                    "<HTML><HEAD></HEAD><BODY><span style='color:#FF0000'><H1><P>error_code: "
+                    + str(error_code)
+                    + ", "
+                    + error_msg
+                    + " <br></P></H1></BODY></HTML>"
             )
             self["webview1"].load_html(error_html)
         # error_code: -1009, The Internet connection appears to be offline.

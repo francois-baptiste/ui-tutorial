@@ -26,5 +26,6 @@ class UsingSubviews(ui.View):
         label.x = label.y = self.labelcounter * 20
         self.add_subview(label)
 
+
 if __name__ == '__main__':
     ui.load_view()  # Custom View Class = UsingSubviews

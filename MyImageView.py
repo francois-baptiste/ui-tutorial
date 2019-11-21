@@ -1,6 +1,8 @@
 # coding: utf-8
 
-import ui, os, sys
+import os
+import sys
+import ui
 
 
 class MyImageView(ui.View):
@@ -8,7 +10,7 @@ class MyImageView(ui.View):
         self.root = os.path.expanduser("~")
         self.rootlen = len(self.root)
         self.path = os.getcwd()
-        self.root = self.path[self.rootlen :]
+        self.root = self.path[self.rootlen:]
         self.color = "white"
         self.x_off = 0
         self.y_off = 0
@@ -40,8 +42,8 @@ class MyImageView(ui.View):
         path.fill()
         self.x_off = (self.scr_width - (self.img_width * self.ratio / self.scr_cor)) / 2
         self.y_off = (
-            self.scr_height - (self.img_height * self.ratio / self.scr_cor)
-        ) / 2
+                             self.scr_height - (self.img_height * self.ratio / self.scr_cor)
+                     ) / 2
         self.img.draw(
             self.x_off,
             self.y_off,

@@ -1,6 +1,8 @@
 # coding: utf-8
 
-import console, speech, ui
+import console
+import speech
+import ui
 
 
 class AreYouEnabledView(ui.View):
