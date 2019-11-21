@@ -102,7 +102,10 @@ class MyTableView(ui.View):
                 self.btn_name.background_color = self.unselect_color
             if sender.name == self.btn_size.name:
                 self.btn_size.background_color = self.select_color
-                self.all_items = sorted(self.all_items, key=itemgetter(sender_index))
+                self.all_items = sorted([elem for elem in self.all_items if not isinstance(elem[sender_index], str)],
+                       key=itemgetter(sender_index)) + sorted(
+                    [elem for elem in self.all_items if isinstance(elem[sender_index], str)],
+                    key=itemgetter(sender_index))
             else:
                 self.btn_size.background_color = self.unselect_color
             if sender.name == self.btn_date.name:
@@ -154,6 +157,7 @@ class MyTableView(ui.View):
                 size = os.path.getsize(full_pathname)
                 date = os.path.getmtime(full_pathname)
                 self.files.append((entry, size, date))
+
 
 if __name__ == '__main__':
     MyTableView()

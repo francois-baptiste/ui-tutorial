@@ -17,8 +17,7 @@ def test_Name():
 
 def test_Size():
     toto = MyTableView()
-    with pytest.raises(TypeError):
-        toto.btn_action(namedtuple('Sender', ['name', 'background_color'])('Size', 3))
+    toto.btn_action(namedtuple('Sender', ['name', 'background_color'])('Size', 3))
 
 
 def test_Daten():
