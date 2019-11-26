@@ -11,7 +11,7 @@ class AreYouEnabledView(ui.View):
         print("-" * 20)  # sheets are useful for seeing the console below them
 
     def did_load(self):
-        self["user text"].begin_editing()  # place the focus on the field
+        self["user_text"].begin_editing()  # place the focus on the field
         self.textfield_sensitive_buttons = "alert hud_alert popover print say".split()
         self.enable_buttons(False)
         self.set_actions()
@@ -42,7 +42,7 @@ class AreYouEnabledView(ui.View):
         speech.say("Hi!")
 
     def button_pressed(self, sender):
-        user_text = self["user text"].text
+        user_text = self["user_text"].text
         assert user_text  # buttons will not be enabled if there is no text
         # method 4: using sender.name to decide how to respond
         if sender.name == "alert":

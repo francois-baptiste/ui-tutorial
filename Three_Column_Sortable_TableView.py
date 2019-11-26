@@ -42,6 +42,12 @@ class MyTableViewDelegate(object):
     def tableview_did_deselect(self, tableview, section, row):
         print("deselect")
 
+def mysorted(mylist, myindex, reverse=False):
+    return sorted([elem for elem in mylist if not isinstance(elem[myindex], str)],
+           key=itemgetter(myindex), reverse=reverse) + sorted(
+        [elem for elem in mylist if isinstance(elem[myindex], str)],
+        key=itemgetter(myindex), reverse=reverse)
+
 
 class MyTableView(ui.View):
     def __init__(self):
@@ -89,31 +95,26 @@ class MyTableView(ui.View):
         ):  # thrid click on the same column doesn't work if it's no hardcoded color
             if sender.background_color == self.unselect_color:
                 sender.background_color = self.select_color
-                self.all_items = sorted(self.all_items, key=itemgetter(sender_index))
+                self.all_items = mysorted(self.all_items, sender_index)
             else:
                 sender.background_color = self.unselect_color
-                self.all_items = sorted(
-                    self.all_items, key=itemgetter(sender_index), reverse=True
-                )
+                self.all_items = mysorted(self.all_items, sender_index, reverse=True)
         else:
             if self.active_button == None:
                 self.active_button = sender.name
             if sender.name == self.btn_name.name:
                 self.btn_name.background_color = self.select_color
-                self.all_items = sorted(self.all_items, key=itemgetter(sender_index))
+                self.all_items = mysorted(self.all_items, sender_index)
             else:
                 self.btn_name.background_color = self.unselect_color
             if sender.name == self.btn_size.name:
                 self.btn_size.background_color = self.select_color
-                self.all_items = sorted([elem for elem in self.all_items if not isinstance(elem[sender_index], str)],
-                                        key=itemgetter(sender_index)) + sorted(
-                    [elem for elem in self.all_items if isinstance(elem[sender_index], str)],
-                    key=itemgetter(sender_index))
+                self.all_items = mysorted(self.all_items, sender_index)
             else:
                 self.btn_size.background_color = self.unselect_color
             if sender.name == self.btn_date.name:
                 self.btn_date.background_color = self.select_color
-                self.all_items = sorted(self.all_items, key=itemgetter(sender_index))
+                self.all_items = mysorted(self.all_items, sender_index)
             else:
                 self.btn_date.background_color = self.unselect_color
         self.tv.data_source.items = self.all_items
