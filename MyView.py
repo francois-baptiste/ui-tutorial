@@ -55,7 +55,7 @@ class MyView(ui.View):
             orientation = "portrait"
         self.layout_count += 1
         print(
-            "[layout] counter = {self.layout_count}, mode = {}, orientation = {}".format(style, orientation)
+            "[layout] counter = {}, mode = {}, orientation = {}".format(self.layout_count, style, orientation)
         )
         # In fullscreen mode orientation (portrait/landscape) is tracked
 
